@@ -15,5 +15,6 @@ docker rm $id
 docker build . -t multistage-docker-build-java
 
 # docker images size check
+docker images 
 
 ```
