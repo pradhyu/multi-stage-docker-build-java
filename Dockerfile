@@ -7,7 +7,7 @@ RUN ./mvnw clean install
 FROM adoptopenjdk/openjdk11 as final 
 WORKDIR /app
 # fixme: get the jar name from the env variable 
-COPY --from=builder /app/target/multistage-docker-build-java-0.0.1-SNAPSHOT.jar ./app.jar
+COPY --from=builder /app/target/multistage-docker-build-java-*.jar ./app.jar
 
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","/app/app.jar"]
