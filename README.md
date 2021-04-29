@@ -2,6 +2,7 @@
 ```bash
 # use stage 1 in multi stage build to build java and test
 docker build --target builder . -t builder
+# check if first stage fails , do docker stop there or go to second stage. 
 
 #Create the container from the image we just built and retrieve
 # its id.
